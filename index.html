@@ -1,1 +1,948 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHAGHIK — Creative Web Designer</title>
+  <meta name="description" content="Shaghik's creative web design portfolio featuring Shopify and front-end projects.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F7F1E8;
+      --white: #FFFDF9;
+      --burgundy: #7A1F2B;
+      --dark: #292321;
+      --muted: #766B65;
+      --champagne: #D8C3A5;
+      --border: #E6D9CA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 65px);
+      margin: 18px 0 28px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,241,232,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+    }
+
+    .nav {
+      height: 85px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      letter-spacing: 3px;
+      color: var(--burgundy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--burgundy);
+    }
+
+    .nav-button {
+      border: 1px solid var(--burgundy);
+      padding: 12px 20px;
+      color: var(--burgundy);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--burgundy);
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "S";
+      position: absolute;
+      right: 3%;
+      top: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: min(65vw, 700px);
+      line-height: 1;
+      color: rgba(122,31,43,.045);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(65px, 10vw, 145px);
+      color: var(--burgundy);
+      letter-spacing: -4px;
+      margin: 20px 0;
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: clamp(17px, 2vw, 23px);
+      max-width: 550px;
+      margin: 30px 0 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 30px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--burgundy);
+      color: white;
+      border: 1px solid var(--burgundy);
+    }
+
+    .btn-primary:hover {
+      background: #551521;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--burgundy);
+      color: var(--burgundy);
+    }
+
+    .btn-outline:hover {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 480px;
+      background: var(--burgundy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .about-art::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(255,255,255,.4);
+    }
+
+    .about-art span {
+      font-family: 'Playfair Display', serif;
+      font-size: 160px;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .about-art small {
+      color: var(--champagne);
+      letter-spacing: 5px;
+      font-size: 11px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-style: italic;
+      color: var(--burgundy);
+      margin-top: 30px;
+    }
+
+    /* EXPERTISE */
+
+    .expertise {
+      text-align: center;
+    }
+
+    .section-intro {
+      max-width: 600px;
+      margin: 0 auto 55px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: left;
+    }
+
+    .service {
+      background: var(--white);
+      padding: 45px 35px;
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      border-color: var(--burgundy);
+    }
+
+    .service-number {
+      color: var(--burgundy);
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .service h3 {
+      font-size: 28px;
+      margin: 35px 0 18px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      background: var(--white);
+    }
+
+    .project-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 55px;
+      gap: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px 30px;
+    }
+
+    .project:first-child {
+      grid-column: span 2;
+    }
+
+    .project-visual {
+      height: 360px;
+      overflow: hidden;
+      position: relative;
+      background: #E7D8CB;
+    }
+
+    .project:first-child .project-visual {
+      height: 490px;
+    }
+
+    .project-visual img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .project:hover img {
+      transform: scale(1.06);
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 22px;
+    }
+
+    .project-info h3 {
+      font-size: 30px;
+      margin: 6px 0;
+    }
+
+    .project-info p {
+      font-size: 13px;
+    }
+
+    .project-link {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--burgundy);
+      color: var(--burgundy);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 22px;
+      transition: .3s;
+      flex-shrink: 0;
+    }
+
+    .project-link:hover {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      text-align: center;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 45px;
+    }
+
+    .skill {
+      border: 1px solid var(--border);
+      padding: 14px 25px;
+      background: var(--white);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--burgundy);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .contact .eyebrow {
+      color: var(--champagne);
+    }
+
+    .contact h2 {
+      font-size: clamp(45px, 7vw, 90px);
+      max-width: 800px;
+      margin: 25px auto;
+    }
+
+    .contact p {
+      color: #E8D8D4;
+      max-width: 550px;
+      margin: 0 auto 40px;
+    }
+
+    .contact .btn {
+      background: var(--cream);
+      color: var(--burgundy);
+      border: 1px solid var(--cream);
+    }
+
+    footer {
+      background: #541621;
+      color: white;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s, transform .8s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 30px;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-art {
+        min-height: 320px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project:first-child {
+        grid-column: auto;
+      }
+
+      .project-visual,
+      .project:first-child .project-visual {
+        height: 300px;
+      }
+
+      .project-heading {
+        display: block;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">SHAGHIK.</a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="nav-button">Let's Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Creative Web Designer · Portfolio 2026</span>
+
+          <h1>SHAGHIK<em>.</em></h1>
+
+          <p class="hero-description">
+            Creating thoughtful digital experiences
+            with elegance, creativity, and intention.
+          </p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work ↗
+            </a>
+            <a href="#about" class="btn btn-outline">
+              Discover My Story
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-art reveal">
+          <span>S.</span>
+          <small>DESIGN WITH INTENTION</small>
+        </div>
+
+        <div class="about-text reveal">
+          <span class="eyebrow">01 / About Me</span>
+
+          <h2>A creative mind,
+            a thoughtful approach.</h2>
+
+          <p>
+            Hello, I'm Shaghik — a creative web designer
+            passionate about building elegant, meaningful,
+            and user-friendly digital experiences.
+          </p>
+
+          <p>
+            My work brings together aesthetics and
+            functionality, transforming ideas into
+            thoughtfully designed websites.
+          </p>
+
+          <p>
+            From Shopify storefronts to creative landing
+            pages, I enjoy exploring how design and
+            technology can work beautifully together.
+          </p>
+
+          <div class="signature">Shaghik</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="expertise" id="expertise">
+      <div class="container">
+
+        <span class="eyebrow">02 / What I Do</span>
+        <h2>My Expertise</h2>
+
+        <p class="section-intro">
+          Combining thoughtful design with practical
+          development to create engaging online experiences.
+        </p>
+
+        <div class="services">
+
+          <div class="service reveal">
+            <span class="service-number">01 /</span>
+            <h3>Shopify Design</h3>
+            <p>
+              Creating elegant online storefronts with
+              thoughtful product presentation, custom
+              sections, and intuitive shopping experiences.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <span class="service-number">02 /</span>
+            <h3>Web Development</h3>
+            <p>
+              Building responsive websites using HTML,
+              CSS, and JavaScript with a focus on usability
+              and visual detail.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <span class="service-number">03 /</span>
+            <h3>Creative Direction</h3>
+            <p>
+              Exploring brand identity, typography,
+              color palettes, and visual storytelling
+              to create memorable digital concepts.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="container">
+
+        <div class="project-heading">
+          <div>
+            <span class="eyebrow">03 / Portfolio</span>
+            <h2>Selected Work</h2>
+          </div>
+
+          <p>A collection of my creative projects.</p>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- MERRIA -->
+          <article class="project reveal">
+            <a
+              href="https://shaghik-agop-33vzwjsg.myshopify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View MERRIA"
+            >
+              <div class="project-visual">
+                <img
+                  src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1400&q=85"
+                  alt="Elegant tableware and dining setting"
+                  loading="lazy"
+                >
+              </div>
+            </a>
+
+            <div class="project-info">
+              <div>
+                <span class="eyebrow">Shopify · E-commerce</span>
+                <h3>MERRIA</h3>
+                <p>Curated tableware and beautiful everyday living.</p>
+              </div>
+
+              <a
+                class="project-link"
+                href="https://shaghik-agop-33vzwjsg.myshopify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit MERRIA"
+              >↗</a>
+            </div>
+          </article>
+
+          <!-- NOIR & CREME -->
+          <article class="project reveal">
+            <a
+              href="https://shaghikdev.github.io/noir-and-creme/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Noir and Creme"
+            >
+              <div class="project-visual">
+                <img
+                  src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=85"
+                  alt="Elegant dessert presentation"
+                  loading="lazy"
+                >
+              </div>
+            </a>
+
+            <div class="project-info">
+              <div>
+                <span class="eyebrow">Creative Website</span>
+                <h3>NOIR & CRÈME</h3>
+                <p>An elegant digital design concept.</p>
+              </div>
+
+              <a
+                class="project-link"
+                href="https://shaghikdev.github.io/noir-and-creme/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Noir and Creme"
+              >↗</a>
+            </div>
+          </article>
+
+          <!-- FLEURE -->
+          <article class="project reveal">
+            <a
+              href="https://shaghikdev.github.io/fleure-floral-atelier/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Fleure Floral Atelier"
+            >
+              <div class="project-visual">
+                <img
+                  src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=1000&q=85"
+                  alt="Beautiful floral arrangement"
+                  loading="lazy"
+                >
+              </div>
+            </a>
+
+            <div class="project-info">
+              <div>
+                <span class="eyebrow">Creative Website</span>
+                <h3>FLEURÉ</h3>
+                <p>A refined floral atelier website concept.</p>
+              </div>
+
+              <a
+                class="project-link"
+                href="https://shaghikdev.github.io/fleure-floral-atelier/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Fleure"
+              >↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="container">
+
+        <span class="eyebrow">04 / My Toolkit</span>
+        <h2>Skills & Tools</h2>
+
+        <p>
+          The tools and technologies I use to bring
+          creative ideas to life.
+        </p>
+
+        <div class="skill-list">
+          <span class="skill">Shopify</span>
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Liquid</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">GitHub Pages</span>
+          <span class="skill">Website Customization</span>
+          <span class="skill">Creative Design</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container reveal">
+
+        <span class="eyebrow">05 / Get In Touch</span>
+
+        <h2>Let's create something beautiful.</h2>
+
+        <p>
+          Have a project in mind or simply want to connect?
+          I'd love to hear from you.
+        </p>
+
+        <a
+          href="https://github.com/shaghikdev"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore My GitHub ↗
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> SHAGHIK. All rights reserved.</span>
+
+      <span>Designed with intention & elegance.</span>
+
+      <a
+        href="https://github.com/shaghikdev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GITHUB ↗
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Scroll animations
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(element => {
+        observer.observe(element);
+      });
+    } else {
+      document.querySelectorAll('.reveal').forEach(element => {
+        element.classList.add('visible');
+      });
+    }
+
+    // Footer year
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
